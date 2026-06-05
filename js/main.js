@@ -97,10 +97,13 @@ function renderGuide() {
         const cards = section.places.map(function(place) {
             const dest = place.address || place.name + ', ' + place.location[currentLang];
             const desc = place.description[currentLang];
-            const links = [
-                '<a href="' + place.website + '" target="_blank" rel="noopener noreferrer">' + t('linkWebsite') + '</a>',
+            const siteEntries = place.websites || [{ label: t('linkWebsite'), url: place.website }];
+            const links = siteEntries.map(function(site) {
+                const label = typeof site.label === 'object' ? site.label[currentLang] : site.label;
+                return '<a href="' + site.url + '" target="_blank" rel="noopener noreferrer">' + label + '</a>';
+            }).concat([
                 '<a href="' + mapsDir(dest) + '" target="_blank" rel="noopener noreferrer">' + t('linkDirections') + '</a>'
-            ].join('');
+            ]).join('');
             return (
                 '<article class="place-card">' +
                     '<div class="place-header">' +

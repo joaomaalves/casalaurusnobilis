@@ -15,6 +15,18 @@ const guidePlaces = [
                 website: 'https://www.cm-reguengos-monsaraz.pt/locais/monte-dacorda/'
             },
             {
+                name: 'Monte de Palaios',
+                location: { en: 'Campinho', pt: 'Campinho' },
+                description: {
+                    en: 'Rustic Alentejo buffet — traditional starters, mains and desserts in a countryside setting.',
+                    pt: 'Buffet alentejano num ambiente rústico — entradas, pratos e sobremesas tradicionais.'
+                },
+                distance: '2 km',
+                driveTime: '~5 min',
+                address: 'Campinho, 7200-207 Reguengos de Monsaraz',
+                website: 'https://www.cm-reguengos-monsaraz.pt/locais/monte-de-palaios/'
+            },
+            {
                 name: 'O Aficionado',
                 location: { en: 'Amieira', pt: 'Amieira' },
                 description: {
@@ -121,16 +133,19 @@ const guidePlaces = [
         id: 'products',
         places: [
             {
-                name: 'Xarazarte — Olaria',
-                location: { en: 'Monsaraz', pt: 'Monsaraz' },
+                name: 'Monsaraz',
+                location: { en: 'Medieval village', pt: 'Vila medieval' },
                 description: {
-                    en: 'Handmade terracotta ceramics in the medieval village — workshop and shop.',
-                    pt: 'Cerâmica em barro vermelho feita à mão na vila medieval — atelier e loja.'
+                    en: 'Several shops with ceramics, tapestry and local crafts — worth visiting Fabricaal and Paula Neves.',
+                    pt: 'Várias lojas com cerâmica, tapeçaria e artesanato local — vale a pena visitar a Fabricaal e a Paula Neves.'
                 },
                 distance: '16 km',
                 driveTime: '~20 min',
-                address: 'Monsaraz',
-                website: 'https://www.xarazarte.pt/'
+                address: '7200-175 Monsaraz',
+                websites: [
+                    { label: 'Fabricaal', url: 'https://www.fabricaal.com/en/home/' },
+                    { label: 'Paula Neves', url: 'https://paulaneves.pt/' }
+                ]
             },
             {
                 name: 'São Pedro do Corval — Olaria',
