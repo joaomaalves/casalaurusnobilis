@@ -1,5 +1,56 @@
 const guidePlaces = [
     {
+        id: 'aldeia',
+        places: [
+            {
+                name: 'Mercearia Tradicional',
+                description: {
+                    en: 'Traditional village grocery — everyday essentials and local products.',
+                    pt: 'Mercearia tradicional da aldeia — produtos do dia a dia e artigos locais.'
+                },
+                distance: { en: 'in the village', pt: 'na aldeia' },
+                driveTime: { en: 'on foot', pt: 'a pé' },
+                address: 'Mercearia Tradicional, Campo, Reguengos de Monsaraz',
+                websites: [
+                    {
+                        label: 'Google Maps',
+                        url: 'https://www.google.com/maps/search/?api=1&query=Mercearia+tradicional+Campo+Reguengos+de+Monsaraz'
+                    }
+                ]
+            },
+            {
+                name: 'Mini Mercado Costa',
+                description: {
+                    en: 'Village mini market on Rua do Forno — not listed on Google Maps.',
+                    pt: 'Mini mercado da aldeia na Rua do Forno — não aparece no Google Maps.'
+                },
+                distance: { en: 'in the village', pt: 'na aldeia' },
+                driveTime: { en: 'on foot', pt: 'a pé' },
+                address: 'Rua do Forno, Campo, Reguengos de Monsaraz'
+            },
+            {
+                name: { en: 'Traditional coffee shops', pt: 'Cafés' },
+                description: {
+                    en: 'The village has two traditional coffee shops for coffee and a quick bite.',
+                    pt: 'A aldeia tem dois cafés para café e um lanche.'
+                },
+                distance: { en: 'in the village', pt: 'na aldeia' },
+                driveTime: { en: 'on foot', pt: 'a pé' },
+                address: 'Campo, Reguengos de Monsaraz'
+            },
+            {
+                name: { en: 'ATM', pt: 'Multibanco' },
+                description: {
+                    en: 'One ATM in the village.',
+                    pt: 'Um multibanco na aldeia.'
+                },
+                distance: { en: 'in the village', pt: 'na aldeia' },
+                driveTime: { en: 'on foot', pt: 'a pé' },
+                address: 'Campo, Reguengos de Monsaraz'
+            }
+        ]
+    },
+    {
         id: 'restaurants',
         places: [
             {

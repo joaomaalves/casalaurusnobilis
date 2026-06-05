@@ -5,38 +5,45 @@ const i18n = {
     en: {
         subtitle: 'a place to rest',
         navLabel: 'Around the area',
+        navAldeia: 'The village',
         navRestaurants: 'Restaurants',
         navBeaches: 'Beaches',
         navProducts: 'Local products',
         navPlaces: 'Places of interest',
         guideTitle: 'Around the area',
         guideIntro: 'Our favourite spots near Campo — distances are approximate driving times from the casa.',
+        sectionAldeia: 'In the village',
         sectionRestaurants: 'Restaurants',
         sectionBeaches: 'Beaches',
         sectionProducts: 'Local products',
         sectionPlaces: 'Places of interest',
+        linkGoogleMaps: 'Google Maps',
         linkWebsite: 'Website',
         linkDirections: 'Directions'
     },
     pt: {
         subtitle: 'um lugar para descansar',
         navLabel: 'Na redor',
+        navAldeia: 'Na aldeia',
         navRestaurants: 'Restaurantes',
         navBeaches: 'Praias',
         navProducts: 'Produtos locais',
         navPlaces: 'Locais de interesse',
         guideTitle: 'Aqui Perto',
         guideIntro: 'Os nossos sítios preferidos aqui na zona.',
+        sectionAldeia: 'Na aldeia',
         sectionRestaurants: 'Restaurantes',
         sectionBeaches: 'Praias',
         sectionProducts: 'Produtos locais',
         sectionPlaces: 'Locais de interesse',
+        linkGoogleMaps: 'Google Maps',
         linkWebsite: 'Website',
         linkDirections: 'Como chegar'
     }
 };
 
 const sectionTitleKeys = {
+    aldeia: 'sectionAldeia',
     restaurants: 'sectionRestaurants',
     beaches: 'sectionBeaches',
     products: 'sectionProducts',
@@ -52,6 +59,11 @@ function mapsDir(destination) {
 
 function t(key) {
     return i18n[currentLang][key] || i18n.en[key] || key;
+}
+
+function placeText(value) {
+    if (value && typeof value === 'object') return value[currentLang];
+    return value;
 }
 
 function detectLang() {
@@ -95,20 +107,25 @@ function renderGuide() {
     container.innerHTML = guidePlaces.map(function(section) {
         const titleKey = sectionTitleKeys[section.id];
         const cards = section.places.map(function(place) {
-            const dest = place.address || place.name + ', ' + place.location[currentLang];
+            const name = placeText(place.name);
+            const location = place.location ? placeText(place.location) : '';
+            const dest = place.address || (location ? name + ', ' + location : name);
             const desc = place.description[currentLang];
-            const siteEntries = place.websites || [{ label: t('linkWebsite'), url: place.website }];
+            const siteEntries = place.websites || (place.website ? [{ label: t('linkWebsite'), url: place.website }] : []);
             const links = siteEntries.map(function(site) {
-                const label = typeof site.label === 'object' ? site.label[currentLang] : site.label;
+                let label = site.label;
+                if (label === 'Google Maps') label = t('linkGoogleMaps');
+                else if (typeof label === 'object') label = label[currentLang];
                 return '<a href="' + site.url + '" target="_blank" rel="noopener noreferrer">' + label + '</a>';
             }).concat([
                 '<a href="' + mapsDir(dest) + '" target="_blank" rel="noopener noreferrer">' + t('linkDirections') + '</a>'
             ]).join('');
+            const distanceText = [placeText(place.distance), placeText(place.driveTime)].filter(Boolean).join(' · ');
             return (
                 '<article class="place-card">' +
                     '<div class="place-header">' +
-                        '<h4 class="place-name">' + place.name + '</h4>' +
-                        '<span class="place-distance">' + place.distance + ' · ' + place.driveTime + '</span>' +
+                        '<h4 class="place-name">' + name + '</h4>' +
+                        '<span class="place-distance">' + distanceText + '</span>' +
                     '</div>' +
                     '<p class="place-desc">' + desc + '</p>' +
                     '<div class="place-links">' + links + '</div>' +
