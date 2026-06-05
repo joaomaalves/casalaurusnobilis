@@ -86,6 +86,60 @@
             text-transform: lowercase;
         }
 
+        .area-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 24px;
+            margin-top: 36px;
+            padding: 0 20px;
+        }
+
+        .area-nav a {
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--deep-earth);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .area-nav a:hover {
+            color: var(--terracotta);
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 20px;
+        }
+
+        .lang-btn {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border: 1px solid var(--warm-sand);
+            background: transparent;
+            color: var(--deep-earth);
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--terracotta);
+            color: var(--charcoal);
+        }
+
+        .lang-btn.active {
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+            color: var(--soft-white);
+        }
+
         /* Gallery */
         .gallery {
             max-width: 1600px;
@@ -297,12 +351,159 @@
         .gallery-item:nth-child(11) { animation-delay: 0.6s; }
         .gallery-item:nth-child(12) { animation-delay: 0.65s; }
         .gallery-item:nth-child(n+13) { animation-delay: 0.7s; }
+
+        /* Local guide */
+        .guide {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
+
+        .guide-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .guide-intro h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .guide-intro p {
+            font-size: 0.95rem;
+            color: var(--deep-earth);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .guide-section {
+            margin-bottom: 56px;
+        }
+
+        .guide-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--warm-sand);
+        }
+
+        .place-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .place-card {
+            background: var(--soft-white);
+            border-radius: 4px;
+            padding: 24px 28px;
+            box-shadow:
+                0 4px 20px rgba(58, 53, 48, 0.06),
+                0 1px 3px rgba(58, 53, 48, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .place-card:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 12px 28px rgba(58, 53, 48, 0.1),
+                0 2px 6px rgba(58, 53, 48, 0.06);
+        }
+
+        .place-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px 16px;
+            margin-bottom: 8px;
+        }
+
+        .place-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .place-distance {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            color: var(--terracotta);
+            white-space: nowrap;
+        }
+
+        .place-desc {
+            font-size: 0.9rem;
+            color: var(--deep-earth);
+            margin-bottom: 14px;
+            line-height: 1.55;
+        }
+
+        .place-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        .place-links a {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            text-decoration: none;
+            border-bottom: 1px solid var(--terracotta);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .place-links a:hover {
+            color: var(--terracotta);
+            border-color: var(--deep-earth);
+        }
+
+        @media (max-width: 768px) {
+            .guide {
+                padding: 0 20px 60px;
+            }
+
+            .place-card {
+                padding: 20px;
+            }
+
+            .area-nav {
+                gap: 6px 16px;
+            }
+
+            .area-nav a {
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Casa Laurus Nobilis</h1>
-        <p class="subtitle">a place to rest</p>
+        <p class="subtitle" data-i18n="subtitle">a place to rest</p>
+        <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <nav class="area-nav" aria-label="Around the area">
+            <a href="#restaurants" data-i18n="navRestaurants">Restaurants</a>
+            <a href="#beaches" data-i18n="navBeaches">Beaches</a>
+            <a href="#products" data-i18n="navProducts">Local products</a>
+            <a href="#places" data-i18n="navPlaces">Places of interest</a>
+        </nav>
     </header>
 
     <main class="gallery">
@@ -406,6 +607,14 @@
         </div>
     </main>
 
+    <section class="guide" aria-label="Around the area">
+        <div class="guide-intro">
+            <h2 data-i18n="guideTitle">Around the area</h2>
+            <p data-i18n="guideIntro">Our favourite spots near Campo — distances are approximate driving times from the casa.</p>
+        </div>
+        <div id="guide-sections"></div>
+    </section>
+
     <footer>
         <div class="laurel">🌿</div>
         Casa Laurus Nobilis
@@ -419,92 +628,8 @@
         <span class="lightbox-nav lightbox-next" onclick="nextImage(event)">&#8250;</span>
     </div>
 
-    <script>
-        const images = [
-            // Exterior shots first
-            "Screenshot 2025-12-09 at 11.43.48.png",
-            "Screenshot 2025-12-09 at 11.43.54.png",
-            "Screenshot 2025-12-09 at 11.43.59.png",
-            "Screenshot 2025-12-09 at 11.43.07.png",
-            "Screenshot 2025-12-09 at 11.42.59.png",
-            // Interior shots
-            "Screenshot 2025-12-09 at 11.39.11.png",
-            "Screenshot 2025-12-09 at 11.39.20.png",
-            "Screenshot 2025-12-09 at 11.39.30.png",
-            "Screenshot 2025-12-09 at 11.39.41.png",
-            "Screenshot 2025-12-09 at 11.39.53.png",
-            "Screenshot 2025-12-09 at 11.40.04.png",
-            "Screenshot 2025-12-09 at 11.40.14.png",
-            "Screenshot 2025-12-09 at 11.40.23.png",
-            "Screenshot 2025-12-09 at 11.40.32.png",
-            "Screenshot 2025-12-09 at 11.40.41.png",
-            "Screenshot 2025-12-09 at 11.40.50.png",
-            "Screenshot 2025-12-09 at 11.41.00.png",
-            "Screenshot 2025-12-09 at 11.41.09.png",
-            "Screenshot 2025-12-09 at 11.41.17.png",
-            "Screenshot 2025-12-09 at 11.41.28.png",
-            "Screenshot 2025-12-09 at 11.41.38.png",
-            "Screenshot 2025-12-09 at 11.41.54.png",
-            "Screenshot 2025-12-09 at 11.42.03.png",
-            "Screenshot 2025-12-09 at 11.42.13.png",
-            "Screenshot 2025-12-09 at 11.42.23.png",
-            "Screenshot 2025-12-09 at 11.42.33.png",
-            "Screenshot 2025-12-09 at 11.42.42.png",
-            "Screenshot 2025-12-09 at 11.42.51.png",
-            "Screenshot 2025-12-09 at 11.43.14.png",
-            "Screenshot 2025-12-09 at 11.43.22.png",
-            "Screenshot 2025-12-09 at 11.43.31.png",
-            "Screenshot 2025-12-09 at 11.43.41.png"
-        ];
-
-        let currentIndex = 0;
-
-        function openLightbox(index) {
-            currentIndex = index;
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = images[currentIndex];
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox(event) {
-            if (event.target === document.getElementById('lightbox') ||
-                event.target.classList.contains('lightbox-close')) {
-                document.getElementById('lightbox').classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-
-        function nextImage(event) {
-            event.stopPropagation();
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById('lightbox-img').src = images[currentIndex];
-        }
-
-        function prevImage(event) {
-            event.stopPropagation();
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById('lightbox-img').src = images[currentIndex];
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            const lightbox = document.getElementById('lightbox');
-            if (!lightbox.classList.contains('active')) return;
-
-            if (e.key === 'Escape') {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = '';
-            } else if (e.key === 'ArrowRight') {
-                currentIndex = (currentIndex + 1) % images.length;
-                document.getElementById('lightbox-img').src = images[currentIndex];
-            } else if (e.key === 'ArrowLeft') {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                document.getElementById('lightbox-img').src = images[currentIndex];
-            }
-        });
-    </script>
+    <script src="js/places.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
 
