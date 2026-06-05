@@ -19,7 +19,7 @@ const guidePlaces = [
                 location: { en: 'Amieira', pt: 'Amieira' },
                 description: {
                     en: 'Popular regional restaurant — grilled fish, bacalhau and chocos fritos.',
-                    pt: 'Restaurante regional muito popular — peixe grelhado, bacalhau e chocos fritos.'
+                    pt: 'Restaurante regional muito popular — carne grelhada, bacalhau e chocos fritos.'
                 },
                 distance: '24 km',
                 driveTime: '~25 min',
@@ -67,7 +67,7 @@ const guidePlaces = [
                 location: { en: 'Rosário, Alandroal', pt: 'Rosário, Alandroal' },
                 description: {
                     en: 'Pão & Pizza — farm-to-oven pizzas and bread in a centenary village bakery.',
-                    pt: 'Pão & Pizza — pizzas e pão do forno numa padaria centenária na aldeia.'
+                    pt: 'Pão & Pizza — pizzas e pão no forno numa padaria centenária na aldeia - a melhor Foccacia que já provámos.'
                 },
                 distance: '38 km',
                 driveTime: '~35 min',
