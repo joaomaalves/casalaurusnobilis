@@ -84,8 +84,8 @@ const guidePlaces = [
                     en: 'Popular regional restaurant — grilled fish, bacalhau and chocos fritos.',
                     pt: 'Restaurante regional muito popular — carne grelhada, bacalhau e chocos fritos.'
                 },
-                distance: '24 km',
-                driveTime: '~25 min',
+                distance: '10 km',
+                driveTime: '~14 min',
                 address: 'Rua de Évora, 7220-121 Amieira',
                 website: 'https://www.facebook.com/OAficionado/'
             },
@@ -161,8 +161,8 @@ const guidePlaces = [
                     en: 'The largest certified beach on Lake Alqueva — 600 m of sand, bar, restaurant and water sports.',
                     pt: 'A maior praia certificada do lago Alqueva — 600 m de areal, bar, restaurante e desportos náuticos.'
                 },
-                distance: '24 km',
-                driveTime: '~25 min',
+                distance: '10 km',
+                driveTime: '~12 min',
                 address: 'Praia Fluvial da Amieira, Amieira, Portel',
                 website: 'https://turismo.portel.pt/patrim%C3%B3nio/o-que-visitar/praia-fluvial-da-amieira/'
             },
@@ -229,8 +229,8 @@ const guidePlaces = [
                     en: 'Family honey from the Serra de Portel — lavender honey and bee products.',
                     pt: 'Mel de produção familiar na Serra de Portel — mel de rosmaninho e produtos apícolas.'
                 },
-                distance: '24 km',
-                driveTime: '~25 min',
+                distance: '10 km',
+                driveTime: '~14 min',
                 address: 'Rua da Bica 1, 7220-110 Amieira, Portel',
                 website: 'https://melserraportel.pt/'
             },
@@ -306,8 +306,8 @@ const guidePlaces = [
                     en: 'Boat trips on Lake Alqueva — cruises from one hour to half a day.',
                     pt: 'Passeios de barco no lago Alqueva — cruzeiros de uma hora a meio dia.'
                 },
-                distance: '24 km',
-                driveTime: '~25 min',
+                distance: '10 km',
+                driveTime: '~13 min',
                 address: 'Amieira Marina, 7220-999 Amieira',
                 website: 'https://www.amieiramarina.com/'
             }
