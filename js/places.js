@@ -310,6 +310,30 @@ const guidePlaces = [
                 driveTime: '~13 min',
                 address: 'Amieira Marina, 7220-999 Amieira',
                 website: 'https://www.amieiramarina.com/'
+            },
+            {
+                name: 'Museu do Medronho',
+                location: { en: 'Alqueva', pt: 'Alqueva' },
+                description: {
+                    en: 'Medronho museum and distillery — exhibition, tastings and local products from the Alqueva region.',
+                    pt: 'Museu e destilaria de medronho — exposição, provas e produtos locais da região do Alqueva.'
+                },
+                distance: '21 km',
+                driveTime: '~23 min',
+                address: 'Herdade de Monte Santos, 7220-011 Alqueva',
+                website: 'https://www.museudomedronho.pt/'
+            },
+            {
+                name: 'Sharish Gin',
+                location: { en: 'Reguengos', pt: 'Reguengos' },
+                description: {
+                    en: 'Portuguese gin distillery and interpretation centre — guided tours, tastings and shop.',
+                    pt: 'Destilaria de gin português e centro de interpretação — visitas guiadas, provas e loja.'
+                },
+                distance: '12 km',
+                driveTime: '~15 min',
+                address: 'Caminho do Moureal, 7200-401 Reguengos de Monsaraz',
+                website: 'https://sharishgin.pt/'
             }
         ]
     }
